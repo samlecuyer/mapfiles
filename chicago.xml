@@ -1,0 +1,73 @@
+<Map bgcolor="#6ea8d3" extent="-88.504937 45.476977732327256 -87.066004 46.762457451318404">
+	<Include>inc/base.xml</Include>
+	<Style name="rails">
+		<Rule>
+			<Filter>railway</Filter>
+			<Polygon fill="#333"/>
+		</Rule>
+	</Style>
+	<Style name="cta">
+		<Rule>
+			<!-- the red line -->
+			<Filter>railway = subway and name contains Red or name contains Howard or name contains State Street or name contains Dan Ryan</Filter>
+			<Path stroke="#c60c30" width="3"/>
+		</Rule>
+		<Rule>
+			<!-- the blue line -->
+			<Filter>railway = subway and name contains O'Hare or name contains Dearborn Street or name contains Forest Park</Filter>
+			<Path stroke="#00a1de" width="3"/>
+		</Rule>
+		<Rule>
+			<!-- the brown line -->
+			<Filter>railway = subway and name contains Ravenswood</Filter>
+			<Path stroke="#62361b" width="3"/>
+		</Rule>
+		<Rule>
+			<!-- the green line -->
+			<Filter>railway = subway and name contains Lake or name contains South Side Main or name contains Ashland or name contains East 63rd</Filter>
+			<Path stroke="#6DC067" width="3"/>
+		</Rule>
+		<Rule>
+			<!-- the orange line -->
+			<Filter>railway = subway and name contains Midway or name contains MIdway or name contains Orange</Filter>
+			<Path stroke="#f9461c" width="3"/>
+		</Rule>
+		<Rule>
+			<!-- the purple line -->
+			<Filter>railway = subway and name contains Evanston or name contains North Side Main</Filter>
+			<Path stroke="#522398" width="3"/>
+		</Rule>
+		<Rule>
+			<!-- the pink line -->
+			<Filter>railway = subway and name contains Cermak or name contains Paulina</Filter>
+			<Path stroke="#e27ea6" width="3"/>
+		</Rule>
+		<Rule>
+			<!-- the yellow -->
+			<Filter>railway = subway and name contains Skokie</Filter>
+			<Path stroke="#f9e300" width="3"/>
+		</Rule>
+		<Rule>
+			<!-- the yellow -->
+			<Filter>railway = subway and name contains Loop</Filter>
+			<Path stroke="#62361b" width="5"/>
+			<Path stroke="#f9461c" width="3"/>
+			<Path stroke="#6DC067" width="2"/>
+			<Path stroke="#e27ea6" width="1"/>
+		</Rule>
+	</Style>
+	<Layer name="polygons">
+		<StyleName>nature</StyleName>
+		<StyleName>airports</StyleName>
+		<Datasource type="file" format="shp" name="data/chi_osm_shp/chicago_illinois_osm_polygon.shp">
+			<Query>name,landuse,natural,surface,waterway,aeroway</Query>
+		</Datasource>
+	</Layer>
+	<Layer name="lines">
+		<StyleName>cta</StyleName>
+		<StyleName>roads</StyleName>
+		<Datasource type="file" format="shp" name="data/chi_osm_shp/chicago_illinois_osm_line.shp">
+			<Query>name,railway,highway</Query>
+		</Datasource>
+	</Layer>
+</Map>
