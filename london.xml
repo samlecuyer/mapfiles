@@ -1,0 +1,79 @@
+<Map bgcolor="#6ea8d3" extent="-1.114997 59.386403 0.894999 61.060581">
+	<Include>inc/base.xml</Include>
+	<Style name="tube">
+		<Rule>
+			<Filter>railway = subway and name contains Bakerloo</Filter>
+			<Path stroke="#00782A" width="2"/>
+		</Rule>
+		<Rule>
+			<Filter>railway = subway and name contains Central</Filter>
+			<Path stroke="#E32017" width="2"/>
+		</Rule>
+		<Rule>
+			<Filter>railway = subway and name contains Circle</Filter>
+			<Path stroke="#FFD300" width="2"/>
+		</Rule>
+		<Rule>
+			<Filter>railway = subway and name contains District</Filter>
+			<Path stroke="#00782A" width="2"/>
+		</Rule>
+		<Rule>
+			<Filter>railway = subway and name contains Hammersmith</Filter>
+			<Path stroke="#F3A9BB" width="2"/>
+		</Rule>
+		<Rule>
+			<Filter>railway = subway and name contains Jubilee</Filter>
+			<Path stroke="#A0A5A9" width="2"/>
+		</Rule>
+		<Rule>
+			<Filter>railway = subway and name contains Metropolitan</Filter>
+			<Path stroke="#9B0056" width="2"/>
+		</Rule>
+		<Rule>
+			<Filter>railway = subway and name contains Northern</Filter>
+			<Path stroke="#000" width="5"/>
+		</Rule>
+		<Rule>
+			<Filter>railway = subway and name contains Piccadilly</Filter>
+			<Path stroke="#003688" width="2"/>
+		</Rule>
+		<Rule>
+			<Filter>railway = subway and name contains Victoria</Filter>
+			<Path stroke="#0098D4" width="2"/>
+		</Rule>
+		<Rule>
+			<Filter>railway = subway and name contains Waterloo</Filter>
+			<Path stroke="#95CDBA" width="2"/>
+		</Rule>
+		<Rule>
+			<Filter>railway and name contains DLR</Filter>
+			<Path stroke="#00A4A7" width="2"/>
+		</Rule>
+		<Rule>
+			<Filter>railway and name contains Overground</Filter>
+			<Path stroke="#EE7C0E" width="2"/>
+		</Rule>
+		<Rule>
+			<Filter>railway and name contains Tramlink</Filter>
+			<Path stroke="#84B817" width="2"/>
+		</Rule>
+		<Rule>
+			<Filter>railway and name contains Crossrail</Filter>
+			<Path stroke="#7156A5" width="2"/>
+		</Rule>
+	</Style>
+	<Layer name="polygons">
+		<StyleName>nature</StyleName>
+		<StyleName>rails</StyleName>
+		<Datasource type="file" format="shp" name="data/london_osm_shp/london_england_osm_polygon.shp">
+			<Query>name,landuse,natural,surface,waterway,water,railway</Query>az
+		</Datasource>
+	</Layer>
+	<Layer name="lines">
+		<StyleName>tube</StyleName>
+		<StyleName>roads</StyleName>
+		<Datasource type="file" format="shp" name="data/london_osm_shp/london_england_osm_line.shp">
+			<Query>name,railway,highway</Query>
+		</Datasource>
+	</Layer>
+</Map>
