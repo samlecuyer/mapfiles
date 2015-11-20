@@ -1,0 +1,59 @@
+<Map bgcolor="#6ea8d3" extent="-74.500998 44.163017 -73.226016 45.155252">
+	<Include>inc/base.xml</Include>
+	<Style name="mta">
+		<Rule>
+			<Filter>railway = subway and name contains IND Eighth Avenue Line</Filter>
+			<Path stroke="#0039A6" width="3"/>
+		</Rule>
+		<Rule>
+			<Filter>railway = subway and name contains IND Sixth Avenue Line</Filter>
+			<Path stroke="#FF6319" width="3"/>
+		</Rule>
+		<Rule>
+			<Filter>railway = subway and name contains IND Crosstown Line</Filter>
+			<Path stroke="#6CBE45" width="2"/>
+		</Rule>
+		<Rule>
+			<Filter>railway = subway and name contains BMT Nassau Street Line</Filter>
+			<Path stroke="#996633" width="2"/>
+		</Rule>
+		<Rule>
+			<Filter>railway = subway and name contains BMT Canarsie Line</Filter>
+			<Path stroke="#A7A9AC" width="2"/>
+		</Rule>
+		<Rule>
+			<Filter>railway = subway and name contains BMT Broadway Line</Filter>
+			<Path stroke="#FCCC0A" width="2"/>
+		</Rule>
+		<!-- <Rule>
+			<Filter>railway = subway and name contains S</Filter>
+			<Path stroke="#808183" width="2"/>
+		</Rule> -->
+		<Rule>
+			<Filter>railway = subway and name contains IRT Broadway-Seventh Avenue Line</Filter>
+			<Path stroke="#EE352E" width="2"/>
+		</Rule>
+		<Rule>
+			<Filter>railway = subway and name contains IRT Lexington Avenue Line</Filter>
+			<Path stroke="#00933C" width="2"/>
+		</Rule>
+		<Rule>
+			<Filter>railway = subway and name contains IRT Flushing Line</Filter>
+			<Path stroke="#B933AD" width="2"/>
+		</Rule>
+	</Style>
+	<Layer name="polygons">
+		<StyleName>nature</StyleName>
+		<StyleName>airports</StyleName>
+		<Datasource type="file" format="shp" name="data/nyc_osm_shp/new-york_new-york_osm_polygon.shp">
+			<Query>name,landuse,natural,surface,waterway,aeroway</Query>
+		</Datasource>
+	</Layer>
+	<Layer name="lines">
+		<StyleName>mta</StyleName>
+		<StyleName>roads</StyleName>
+		<Datasource type="file" format="shp" name="data/nyc_osm_shp/new-york_new-york_osm_line.shp">
+			<Query>highway,name,railway</Query>
+		</Datasource>
+	</Layer>
+</Map>

@@ -1,0 +1,43 @@
+<Map bgcolor="#6ea8d3" extent="-119.436995 35.348038 -116.724027 36.897002">
+	<Include>inc/base.xml</Include>
+	<Style name="metro">
+		<Rule>
+			<Filter>railway = light_rail and name contains Blue</Filter>
+			<Path stroke="#0072BC" width="3"/>
+		</Rule>
+		<Rule>
+			<Filter>railway = light_rail and name contains Expo</Filter>
+			<Path stroke="#00A5DB" width="3"/>
+		</Rule>
+		<Rule>
+			<Filter>railway = light_rail and name contains Gold</Filter>
+			<Path stroke="#FDB913" width="3"/>
+		</Rule>
+		<Rule>
+			<Filter>railway = light_rail and name contains Green</Filter>
+			<Path stroke="#6DC067" width="3"/>
+		</Rule>
+		<Rule>
+			<Filter>railway = subway and name contains Purple</Filter>
+			<Path stroke="#A05DA5" width="3"/>
+		</Rule>
+		<Rule>
+			<Filter>railway = subway and name contains Red</Filter>
+			<Path stroke="#ED1C24" width="3"/>
+		</Rule>
+	</Style>
+	
+	<Layer name="polygons">
+		<StyleName>nature</StyleName>
+		<Datasource type="file" format="shp" name="data/la_osm_shp/los-angeles_california_osm_polygon.shp">
+			<Query>name,landuse,natural,surface,waterway</Query>
+		</Datasource>
+	</Layer>
+	<Layer name="lines">
+		<StyleName>metro</StyleName>
+		<StyleName>roads</StyleName>
+		<Datasource type="file" format="shp" name="data/la_osm_shp/los-angeles_california_osm_line.shp">
+			<Query>name,railway,highway</Query>
+		</Datasource>
+	</Layer>
+</Map>
