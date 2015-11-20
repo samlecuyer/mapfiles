@@ -1,0 +1,105 @@
+<Include>
+	<Style name="land_shape">
+		<Rule>
+			<Polygon fill="#c8cfc8"/>
+		</Rule>
+	</Style>
+	<Style name="nature">
+		<Rule>
+			<Filter>landuse = forest</Filter>
+			<Polygon fill="#bac9ba"/>
+		</Rule>
+		<Rule>
+			<Filter>natural = wood</Filter>
+			<Polygon fill="#bac9ba"/>
+		</Rule>
+		<Rule>
+			<Filter>natural = water</Filter>
+			<Polygon fill="#6ea8d3"/>
+		</Rule>
+		<Rule>
+			<Filter>natural = bay</Filter>
+			<Polygon fill="#6ea8d3"/>
+		</Rule>
+		<Rule>
+			<Filter>landuse = basin</Filter>
+			<Polygon fill="#6ea8d3"/>
+		</Rule>
+		<Rule>
+			<Filter>waterway</Filter>
+			<Polygon fill="#6ea8d3"/>
+		</Rule>
+		<Rule>
+			<Filter>water</Filter>
+			<Polygon fill="#6ea8d3"/>
+		</Rule>
+		<Rule>
+			<Filter>natural = coastline</Filter>
+			<Polygon fill="#6ea8d3"/>
+		</Rule>
+		<Rule>
+			<Filter>natural = desert</Filter>
+			<Polygon fill="#d1d1b5"/>
+		</Rule>
+		<Rule>
+			<Filter>natural = rock</Filter>
+			<Polygon fill="#d1d1b5"/>
+		</Rule>
+	</Style>
+	<Style name="roads">
+		<Rule>
+			<Filter>highway = secondary</Filter>
+			<Path stroke="#7777ff" width="0.5"/>
+		</Rule>
+		<Rule>
+			<Filter>highway = tertiary</Filter>
+			<Path stroke="#7777ff" width="0.4"/>
+		</Rule>
+		<Rule>
+			<Filter>highway = residential</Filter>
+			<Path stroke="#7777ff" width="0.3"/>
+		</Rule>
+		<Rule>
+			<Filter>highway = primary</Filter>
+			<Path stroke="#7777ff" width="0.75"/>
+		</Rule>
+		<Rule>
+			<Filter>highway = motorway_link</Filter>
+			<Path stroke="#3b3bc5" width="0.5"/>
+		</Rule>
+		<Rule>
+			<Filter>highway = trunk</Filter>
+			<Path stroke="#00008b" width="1.5"/>
+		</Rule>
+		<Rule>
+			<Filter>highway = motorway</Filter>
+			<Path stroke="#00008b" width="1.5"/>
+		</Rule>
+	</Style>
+	<Style name="city_names">
+		<Rule>
+			<Filter>place = city</Filter>
+			<Text fill="#333" name="name" size="10"/>
+		</Rule>
+	</Style>
+	<Style name="rails">
+		<Rule>
+			<Filter>railway</Filter>
+			<Polygon fill="#333"/>
+		</Rule>
+	</Style>
+	<Style name="airports">
+		<Rule>
+			<Filter>aeroway = aerodrome</Filter>
+			<Polygon fill="#bdc1bd"/>
+		</Rule>
+		<Rule>
+			<Filter>aeroway = runway</Filter>
+			<Polygon fill="#babeba"/>
+		</Rule>
+	</Style>
+	<Layer name="base_land">
+		<StyleName>land_shape</StyleName>
+		<Datasource type="file" format="shp" name="data/land_polygons/land_polygons.shp"></Datasource>
+	</Layer>
+</Include>
