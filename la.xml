@@ -1,3 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+Copyright 2015 Sam L'ecuyer. All rights reserved.
+Use of this source code is governed by a BSD-style license that can be found in the LICENSE file.
+-->
 <Map bgcolor="#6ea8d3" extent="-119.436995 35.348038 -116.724027 36.897002">
 	<Include>inc/base.xml</Include>
 	<Style name="metro">
